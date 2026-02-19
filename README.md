@@ -54,6 +54,19 @@ This project was developed as part of a data analytics portfolio to demonstrate 
 
 ---
 
+## 🗄 Data Preparation (SQL)
+
+Sales data from Internet and Reseller channels were combined using SQL (UNION ALL + JOIN with DimDate).
+
+The SQL layer was responsible for:
+- Merging sales channels
+- Structuring revenue and cost fields
+- Preparing data for Power BI modeling
+
+Full SQL script available in the `/SQL` folder.
+
+---
+
 ## 📊 Dashboard Preview
 
 ### Executive Overview
