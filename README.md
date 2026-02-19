@@ -51,3 +51,20 @@ Based on the analysis, the following actions are recommended:
 ---
 
 This project was developed as part of a data analytics portfolio to demonstrate business-oriented thinking, financial analysis capability, and decision-support dashboard design.
+
+---
+
+## 📊 Dashboard Preview
+
+### Executive Overview
+![Executive Overview](images/overview.png)
+
+### Revenue Analysis
+![Revenue Analysis](images/revenue-analysis.png)
+
+### Cost Analysis
+![Cost Analysis](images/cost-analysis.png)
+
+### Profitability & Strategic Insight
+![Profitability Analysis](images/profitability-analysis.png)
+
