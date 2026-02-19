@@ -1,0 +1,46 @@
+/*
+==============================================================
+Project: Channel Profitability Analysis
+Part 1: Combined Sales
+Objective: Combine FactInternetSales and FactResellerSales 
+           into a unified sales dataset.
+Database: AdventureWorks2022
+Author: Filipe Guerra
+==============================================================
+*/
+
+WITH Combined_Sales AS 
+(
+    -- Internet Sales
+    SELECT
+        A.ProductKey,
+        B.FullDateAlternateKey AS OrderDate,
+        'Internet' AS Channel,
+        A.SalesOrderNumber,
+        A.OrderQuantity,
+        A.UnitPrice,
+        A.TotalProductCost,
+        A.SalesAmount
+    FROM FactInternetSales AS A
+    INNER JOIN DimDate AS B 
+        ON A.OrderDateKey = B.DateKey
+
+    UNION ALL
+
+    -- Reseller Sales
+    SELECT
+        A.ProductKey,
+        B.FullDateAlternateKey AS OrderDate,
+        'Reseller' AS Channel,
+        A.SalesOrderNumber,
+        A.OrderQuantity,
+        A.UnitPrice,
+        A.TotalProductCost,
+        A.SalesAmount
+    FROM FactResellerSales AS A
+    INNER JOIN DimDate AS B 
+        ON A.OrderDateKey = B.DateKey
+)
+
+SELECT *
+FROM Combined_Sales;
